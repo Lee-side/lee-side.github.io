@@ -1,0 +1,51 @@
+baseURL = 'https://lee-side.github.io/'
+languageCode = 'zh-cn'
+title = 'Lee Side Blog'
+theme = 'hextra'
+enableRobotsTXT = true
+hasCJKLanguage = true
+
+[outputs]
+  home = ['HTML', 'RSS']
+  section = ['HTML', 'RSS']
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [['$$', '$$'], ['\\[', '\\]']]
+        inline = [['\\(', '\\)']]
+
+[params]
+  description = 'Personal blog by Lee-side'
+  [params.navbar]
+    displayTitle = true
+    displayLogo = false
+  [params.theme]
+    default = 'system'
+  [params.footer]
+    displayCopyright = true
+    displayPoweredBy = true
+  [params.search]
+    enable = true
+    type = 'flexsearch'
+  [params.blog.list]
+    displayTags = true
+    sortBy = 'date'
+    sortOrder = 'desc'
+    pagerSize = 10
+
+[[menu.main]]
+  name = 'Blog'
+  pageRef = '/blog'
+  weight = 1
+
+[[menu.main]]
+  name = 'About'
+  pageRef = '/about'
+  weight = 2
